@@ -8,6 +8,10 @@ forms.forEach((form) => {
   inputs.forEach((input) => {
     const inputName = input.getAttribute('name');
 
+    if (input.getAttribute('id') === null) {
+      input.setAttribute('id', `input-${inputName}-${new Date().getTime()}`);
+    }
+
     const label = document.createElement('label');
 
     label.classList.add('field-label');
